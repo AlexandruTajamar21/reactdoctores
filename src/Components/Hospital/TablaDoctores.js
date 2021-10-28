@@ -25,10 +25,10 @@ export default class TablaHospitales extends Component {
         this.cargaDoctores();
     }
     borraDoctor = (numero) =>{
-        var request = "/api/Departamentos/" + parseInt(numero);
-        var url = Global.urlcruddepartamentos + request;
+        var request = "/api/Doctores/" + parseInt(numero);
+        var url = Global.urlCruddDoctores + request;
         axios.delete(url).then(res=>{
-            this.cargarDepartamentos();
+            this.cargaDoctores();
         })
     }
 

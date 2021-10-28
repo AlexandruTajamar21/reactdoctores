@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap.min.css"/>
+</head>
+<body>
+    <header id="menu"></header>
+    <h1>Pagina Principal</h1>
+    <button data-idequipo="1">
+        Detalle equipo 1
+    </button>
+    <button data-idequipo="2">
+        Detalle equipo 2
+    </button>    
+    <div id="container"></div>
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script src="./bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#menu").load("./menu.html");
+            $("button").click(function() {
+                var id = $(this).data("idequipo");
+                var pagina = "./detalleequipo.html?idequipo=" + id;
+                console.log(pagina);
+                $("#container").load(pagina);
+            });
+        });
+    </script>
+</body>
+</html>
